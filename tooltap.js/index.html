@@ -1,0 +1,319 @@
+<html>
+<head>
+	<title>tooltap.js</title>
+	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+	<script src="tooltap.js" type="text/javascript"></script>
+	<style type="text/css">
+		body {
+			font-family: Helvetica, Arial, serif;
+			background-color: #8090a4;
+			background-image: url(images/bg.png);
+			background-repeat: repeat-x;
+			margin: 0px;
+			padding: 0px;
+		}
+
+		#logo {
+			background: url(images/logo.png);
+			width: 367px;
+			height: 50px;
+			margin-top: 125px;
+		}
+
+		#info {
+			width: 700px;
+			margin-bottom: 125px;
+			margin-top: 25px;
+			font-size: 13px;
+			font-weight: 800;
+			text-transform: uppercase;
+			color: #dce5eb;
+			text-shadow: 0px 1px 3px #151830;
+		}
+
+		#desc-footer {
+			margin-bottom: 20px;
+			border-top: 1px solid #151729;
+			padding-top: 20px;
+			width: 100%;
+			color: #151729;
+			font-size: 11px;
+			line-height: 35px;
+			font-weight: 600;
+			overflow: hidden;			
+		}
+
+		#desc, #option-desc {
+			margin-bottom: 50px;
+			width: 600px;
+			text-align: justify;
+			color: #151729;
+			font-size: 15px;
+			line-height: 35px;
+			font-weight: 600;
+			overflow: hidden;
+		}
+
+		#desc ul, #desc li {
+			margin: 0px;
+			padding: 0px;
+			list-style-type: none;
+		}
+
+		#desc ul {
+			margin-top: 25px;
+		}
+
+		#desc li {
+			float: left;
+		}
+
+		#desc img {
+			width: 300px;
+			height: 300px;
+		}
+
+		h1 {
+			color: #fff;
+			font-weight: 900;
+			text-transform: uppercase;
+			font-size: 25px;
+			text-shadow: 0px 1px 3px #2c314c;
+		}
+
+		sml {
+			font-size: 10px;
+			color: #555;
+		}
+		
+		sml a {
+			color: #444;
+		}
+
+		.options-select {
+			margin-left: 40px;
+			padding: 2px 10px;
+			cursor: pointer;
+		}
+
+		.options-select:hover {
+			border: 1px solid #ccc;
+		}
+
+		#code {
+			color: #111;
+			background: #fff;
+			border: 1px solid #0c173d;
+			padding: 20px;
+			font-weight: 200;
+			font-size: 13px;
+			font-family: courier, serif;
+		}
+
+		#code str {
+			color: #fb750e;
+			font-weight: 700;
+		}
+
+		#code cls {
+			color: #9ad43c;
+		}
+
+		#code dol, #code num {
+			color: #f31e66;
+			font-weight: 700;
+		}
+
+		button {
+			background: transparent;
+			border: 2px solid #fff;
+			color: #fff;
+			text-transform: uppercase;
+			font-size: 20px;
+			font-weight: 400;
+			padding: 20px 40px;
+			margin: 50px;
+			cursor: pointer;
+		}
+
+		button:hover {
+			background: #151830;
+		}
+	</style>
+
+</head>
+<body>
+	<center>
+		<div id="logo"></div>
+
+		<div id="info">
+			A jQuery library to enable tooltips for elements.
+		</div>
+
+		<div id="desc">
+			<h1>What is it?</h1>
+			Tooltap enables small tooltips to show when the mouse is hovered over an element. This is 
+			useful when you need to present information to the user or give some pointers. For example, hover over the logo at the top or hover over some of my favourite albums:
+			<ul>
+				<li><img id="a1" src="images/1.png" /></li>
+				<li><img id="a2" src="images/2.png" /></li>
+				<li><img id="a3" src="images/3.png" /></li>
+				<li><img id="a4" src="images/4.png" /></li>
+			</ul>
+			<sml>Share the same taste as me? Add me on <a href="http://last.fm/user/jathu" target="_blank">last.fm</a>.</sml>
+		</div>
+
+		<div id="desc">
+			<h1>Options + Syntax</h1>
+			There are several options to style or modify the tooltap to your liking. Here is an example of all the
+			different options. Hover of each option for a description. Note: the value presented here are the default values of a tooltap.
+			
+			<br /><br />
+
+			<div id="code">
+				<dol>$</dol>(<str>"element"</str>).<cls>tooltap</cls>({
+					<div id="option-write" class="options-select">write: <str>"Description here"</str>,</div>
+					<div id="option-id" class="options-select">id: <str>"elementToolTap"</str>,</div>
+					<div id="option-background" class="options-select">background: <str>"#ffffff"</str>,</div>
+					<div id="option-color" class="options-select">color: <str>"#000000"</str>,</div>
+					<div id="option-borderRadius" class="options-select">borderRadius: <num>4</num>,</div>
+					<div id="option-borderColor" class="options-select">borderColor: <str>"#c5c5c5"</str>,</div>
+					<div id="option-shadow" class="options-select">shadow: <str>"0px 2px 15px rgba(0,0,0,0.2)"</str>,</div>
+					<div id="option-width" class="options-select">width: <str>"auto"</str>,</div>
+					<div id="option-maxWidth" class="options-select">maxWidth: <num>500</num></div>
+					<div id="option-padding" class="options-select">padding: <num>20</num>,</div>
+					<div id="option-triangleSize" class="options-select">triangleSize: <num>10</num></div>
+					<div id="option-triangleOffset" class="options-select">triangleOffset: <num>10</num>,</div>
+					<div id="option-speed" class="options-select">speed: <num>250</num>,</div>
+					<div id="option-position" class="options-select">position: <num>null</num></div>
+				});
+			</div>
+		</div>
+
+		<div id="desc">
+			<h1>Download + Fork</h1>
+			For a tutorial, please check the GitHub page.
+			<center>
+				<a href="https://github.com/jathu/tooltap.js/archive/master.zip"><button id="download">Download</button></a>
+				<a href="https://github.com/jathu/tooltap.js"><button id="Github">GitHub</button></a>
+			</center>
+		</div>
+
+		<div id="desc-footer">
+			2013 - Made in Toronto
+		</div>
+	</center>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#logo").tooltap({
+				write: "This font is Gotham Light.",
+				shadow: "0px 0px 10px #31364d",
+				borderColor: "#151830",
+				position: "center top"
+			});
+
+			$("#info").tooltap({
+				write: "Hello World.",
+				shadow: "0px 0px 10px #31364d",
+				borderColor: "#151830"
+			});
+
+			//Album
+
+			$("#a1").tooltap({
+				write: "Endtroducing..... - DJ Shadow",
+				borderColor: "#151830"
+			});
+
+			$("#a2").tooltap({
+				write: "OK Computer - Radiohead",
+				borderColor: "#151830"
+			});
+
+			$("#a3").tooltap({
+				write: "My Beautiful Dark Twisted Fantasy - Kanye West",
+				borderColor: "#151830"
+			});
+
+			$("#a4").tooltap({
+				write: "Lift Your Skinny Fists Like Antennas to Heaven - Godspeed You! Black Emperor",
+				borderColor: "#151830",
+				maxWidth: 600
+			});
+
+			//Option stuff
+
+			$("#option-write").tooltap({
+				write: "Content of the tooltap",
+				position: "left"
+			});
+
+			$("#option-id").tooltap({
+				write: "Assign an id to the tooltap",
+				position: "left"
+			});
+
+			$("#option-background").tooltap({
+				write: "Background color for the tooltap",
+				position: "left"
+			});
+
+			$("#option-color").tooltap({
+				write: "Font color for content of the tooltap",
+				position: "left"
+			});
+
+			$("#option-borderRadius").tooltap({
+				write: "Border radius of the tooltap",
+				position: "left"
+			});
+
+			$("#option-borderColor").tooltap({
+				write: "Border color of the tooltap",
+				position: "left"
+			});
+
+			$("#option-shadow").tooltap({
+				write: "Shadow casted by the tooltap",
+				position: "left"
+			});
+
+			$("#option-width").tooltap({
+				write: "Fixed width of the tooltap",
+				position: "left"
+			});
+
+			$("#option-maxWidth").tooltap({
+				write: "Maximum width of the tooltap ",
+				position: "left"
+			});
+
+			$("#option-padding").tooltap({
+				write: "Inner padding of the tooltap",
+				position: "left"
+			});
+
+			$("#option-triangleSize").tooltap({
+				write: "Size of the triangle that points to the parent element",
+				position: "left"
+			});
+
+			$("#option-triangleOffset").tooltap({
+				write: "Pixel offset of the triangle",
+				position: "left"
+			});
+
+			$("#option-speed").tooltap({
+				write: "Speed at which the tooltap should fade in and out",
+				position: "left"
+			});
+
+			$("#option-position").tooltap({
+				write: "Position of the tooltap. Input should be 'X Y', where X is left, right or center and y is top, bottom or center. If null, default position is center bottom, where the Y position sets itself based on broswer dimension.",
+				position: "left"
+			});
+		});
+	</script>
+</body>
+</html>
