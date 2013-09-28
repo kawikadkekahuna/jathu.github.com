@@ -81,15 +81,6 @@
 			text-shadow: 0px 1px 3px #2c314c;
 		}
 
-		sml {
-			font-size: 10px;
-			color: #555;
-		}
-		
-		sml a {
-			color: #444;
-		}
-
 		.options-select {
 			margin-left: 40px;
 			padding: 2px 10px;
@@ -153,14 +144,13 @@
 		<div id="desc">
 			<h1>What is it?</h1>
 			Tooltap enables small tooltips to show when the mouse is hovered over an element. This is 
-			useful when you need to present information to the user or give some pointers. For example, hover over the logo at the top or hover over some of my favourite albums:
+			useful when you need to present information to the user or give some pointers. For example, hover over the logo at the top of the page or hover over some of the greatest minds of our time:
 			<ul>
 				<li><img id="a1" src="images/1.png" /></li>
 				<li><img id="a2" src="images/2.png" /></li>
 				<li><img id="a3" src="images/3.png" /></li>
 				<li><img id="a4" src="images/4.png" /></li>
 			</ul>
-			<sml>Share the same taste as me? Add me on <a href="http://last.fm/user/jathu" target="_blank">last.fm</a>.</sml>
 		</div>
 
 		<div id="desc">
@@ -222,22 +212,22 @@
 			//Album
 
 			$("#a1").tooltap({
-				write: "Endtroducing..... - DJ Shadow",
+				write: "Steve Jobs - Apple + Pixar",
 				borderColor: "#151830"
 			});
 
 			$("#a2").tooltap({
-				write: "OK Computer - Radiohead",
+				write: "Bill Gates - Microsoft + Bill & Melinda Gates Foundation",
 				borderColor: "#151830"
 			});
 
 			$("#a3").tooltap({
-				write: "My Beautiful Dark Twisted Fantasy - Kanye West",
+				write: "Sergey Brin & Larry Page - Google",
 				borderColor: "#151830"
 			});
 
 			$("#a4").tooltap({
-				write: "Lift Your Skinny Fists Like Antennas to Heaven - Godspeed You! Black Emperor",
+				write: "Elon Musk - PayPal + Tesla + SpaceX",
 				borderColor: "#151830",
 				maxWidth: 600
 			});
