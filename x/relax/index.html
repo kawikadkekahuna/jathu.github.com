@@ -1,0 +1,19 @@
+<!--
+	just relax.
+-->
+<html>
+<head>
+	<title>relax.</title>
+</head>
+<body>
+	<div id="r"></div>
+	<script type="text/javascript">
+		var r = document.getElementById("r"), c = ["d10000", "ff6622","ffda21","33dd00","1133cc","220066","330044"], n = 0, s = 10;
+		setInterval(function() {
+			s = Math.floor((Math.random()*100) + 10);
+			r.innerHTML = r.innerHTML + "<div style='color:#"+c[n]+"; float: left; font-size:"+s+"px'>relax.</div>";
+			n = (n >= (c.length - 1)) ? 0:(n+1);
+		}, 100);
+	</script>
+</body>
+</html>
