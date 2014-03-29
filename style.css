@@ -1,0 +1,85 @@
+@font-face {
+	font-family: "Aleo";
+	src: url("fonts/Aleo-Regular.otf");
+}
+
+@font-face {
+	font-family: "AleoBold";
+	src: url("fonts/Aleo-Bold.otf");
+}
+
+@font-face {
+	font-family: "AleoLight";
+	src: url("fonts/Aleo-Light.otf");
+}
+
+body {
+	background: #fff;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	font-family: "Aleo", "Georgia", "Serif";
+}
+
+#main {
+	width: 100%;
+	height: auto;
+	position: absolute;
+	left: 0px;
+	top: 40%;
+}
+
+#hold {
+	display: inline-block;
+	width: auto;
+	overflow: hidden;
+	text-align: left;
+}
+
+h1 {
+	display: inline-block;
+	font-family: "AleoBold";
+	font-size: 30px;
+	color: #33536d;
+}
+
+h2 {
+	display: block;
+	font-family: "AleoLight";
+	font-size: 20px;
+	color: #91a8ba;
+	margin-top: -15px;
+}
+
+#footer {
+	background: #fff;
+	border-top: 1px solid #91a8ba;
+	width: 100%;
+	height: auto;
+	padding: 10px 0px;
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	letter-spacing: 1px;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+	font-size: 10px;
+}
+
+li {
+	float: left;
+	margin: 0px 10px;
+}
+
+a {
+	text-decoration: none;
+	color: #91a8ba;
+}
+
+a:hover {
+	text-decoration: underline;
+}
