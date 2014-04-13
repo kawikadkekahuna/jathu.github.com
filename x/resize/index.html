@@ -1,0 +1,28 @@
+<!-- 
+I made this so I don't have to open the memory eating 
+monster Photoshop everytime I need to do a simple image resize.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Resize</title>
+	<link href="style.css" type="text/css" rel="stylesheet" />
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="resize.js"></script>
+</head>
+<body>	
+	<div id="controls">
+		<form id="picForm" runat="server">
+			<input type="file" id="picFormInput" />		
+		</form>
+		<div id="size">
+			<center>
+				W:<div id="size-x" contenteditable="true"></div>
+				H:<div id="size-y" contenteditable="true"></div>
+			</center>
+		</div>
+		<button id="do-choose">Select</button>
+		<button id="do-resize">Resize</button>	
+	</div>
+</body>
+</html>
