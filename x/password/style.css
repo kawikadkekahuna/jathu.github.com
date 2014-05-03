@@ -1,0 +1,73 @@
+@font-face {
+	font-family: "Brain-Flower";
+	src: url("Brain-Flower.ttf");
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background: #FF1170;
+	font-family: 'Brain-Flower',Helvetica, 'Helvetica Neue', Arial, Sans-serif;
+}
+
+::-webkit-scrollbar {
+	width: 6px;
+	height: 6px;
+}
+
+::-webkit-scrollbar-track  {
+	background: #FF1170;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #E1EE44; 
+}
+
+#password {
+	position: absolute;
+	top: 50%;
+	left: 0px;
+	width: 100%;
+	text-align: center;
+	color: #E1EE44;
+	font-weight: 100;
+	font-size: 100px;
+	margin-top: -75px;
+}
+
+#new {
+	background-image: url(reload.png);
+	background-size: 100% 100%;
+	width: 22px;
+	height: 22px;
+	position: absolute;
+	bottom: 21px;
+	left: 50%;
+	margin-left: -11px;
+	cursor: pointer;
+}
+
+#new:hover {
+	height: 24px;
+	width: 24px;
+	margin-left: -12px;
+	bottom: 20px;
+}
+
+@media screen and (max-width: 700px) {
+
+	#password {
+		font-size: 60px;
+	}
+
+	#new {
+		width: 42px;
+		height: 42px;
+	}
+
+	#new:hover {
+		height: 44px;
+		width: 44px;
+	}
+
+}
