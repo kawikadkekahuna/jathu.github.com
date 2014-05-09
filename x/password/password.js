@@ -1,5 +1,5 @@
 function Password() {
-	this.asciiIgnore = [34,39,44,58,59,60,62,96];
+	this.asciiIgnore = [34,39,40,41,44,58,59,60,62,91,93,96];
 	this.length = 24;
 }
 
