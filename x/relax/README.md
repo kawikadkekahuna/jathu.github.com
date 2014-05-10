@@ -1,6 +1,6 @@
-## Relax.
+## Relax
 
-Sometimes I need to remind my buddies [Addi](http://dhankar.me/), [Navjot](http://www.navjot.ca/) and [Saif](http://saifkhan.me/) to just relax. But they just won't relax. So, I often send them this link, then they relax.
+Sometimes I need to remind my buddies to just relax. So, I often send them this link.
 
 *"Relaaaaaax buddy."* -Buddha
 
