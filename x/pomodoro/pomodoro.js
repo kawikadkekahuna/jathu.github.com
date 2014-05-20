@@ -57,6 +57,15 @@ Pomodoro.prototype.complete = function() {
 	localStorage.setItem('count', this.count);
 	this.setCount();
 	this.reset();
+	this.lockout();
+}
+
+Pomodoro.prototype.lockout = function() {
+	$('#done').fadeIn(250, function() {
+		setTimeout(function() {
+			$('#done').fadeOut();
+		}, 300000); //5 Minute rest
+	});
 }
 
 Pomodoro.prototype.reset = function() {
@@ -66,11 +75,6 @@ Pomodoro.prototype.reset = function() {
 	}, 250, function() {
 		that.running = false;
 		that.dom.action.innerHTML = "Start";
-		$('#done').fadeIn(250, function() {
-			setTimeout(function() {
-				$('#done').fadeOut();
-			}, 300000); //5 Minute rest
-		});
 	});
 }
 
