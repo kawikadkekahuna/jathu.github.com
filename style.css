@@ -35,7 +35,7 @@ video#vid {
 }
 
 #bar {
-	position: absolute;
+	position: fixed;
 	left: 0px;
 	top: 0px;
 	width: 100%;
@@ -43,11 +43,11 @@ video#vid {
 }
 
 #main {
-	width: 50%;
-	padding: 0px 25%;
-	position: absolute;
+	position: fixed;
 	left: 0px;
 	top: 20%;
+	width: 46%;
+	padding: 0px 27%;
 	color: #FFF;
 	font-size: 20px;
 	line-height: 35px;
