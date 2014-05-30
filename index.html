@@ -8,30 +8,79 @@
 	<meta name="viewport" content="width=device-width">
 	<meta charset="UTF-8">
 	<link rel="shortcut icon" href="imgs/fav.png" />
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 <body>
+	
+	<!-- Video Credit: https://www.youtube.com/watch?v=m6ugFcwsgpE -->
+	<video loop id="vid">
+		<source src="imgs/sagan.mp4" type="video/mp4">
+	</video>
+
+	<div id="bar"></div>
+
 	<div id="main">
-		<center>
-			<div id="hold">
-				<h1>Jathu Satkunarajah</h1>
-				<h2>CS &amp; Math at UofT</h2>			
-			</div>
-		</center>		
+		<p>Hello.</p>
+	
+		<p>My name is Jathu Satkunarajah. I am currently studying computer science and mathematics at the University of Toronto.<p>
+
+		<p>I love to <a href="https://github.com/jathu" target="_blank">develop software</a> and <a href="https://dribbble.com/jathu" target="_blank">design ui</a>. I also listen to a lot of <a href="http://last.fm/user/jathu" target="_blank">music</a> and <a href="https://twitter.com/jathu" target="_blank">tweet</a> from time to time.<p>
+
+		<p>Feel free to <a href="http://linkedin.com/in/jathus" target="_blank">connect</a> or just <a href="mailto:jathu.satkunarajah@gmail.com">say hi</a>.<p>
 	</div>
-	<div id="footer">
-		<center>	
-			<div id="hold"><ul>
-				<li><a href="mailto:jathu.satkunarajah@gmail.com" target="_blank">Email</a></li>
-				<li><a href="https://twitter.com/jathu" target="_blank">Twitter</a></li>
-				<li><a href="http://linkedin.com/in/jathus" target="_blank">LinkedIn</a></li>
-				<li><a href="https://dribbble.com/jathu" target="_blank">Dribbble</a></li>
-				<li><a href="https://github.com/jathu" target="_blank">GitHub</a></li>
-				<!--<li><a href="http://jathu.tumblr.com/">Tumblr</a></li> Some asshole hacked my username.-->
-				<li><a href="http://last.fm/user/jathu" target="_blank">Last.fm</a></li>
-			</ul></div>
-		</center>
-	</div>
+
+	<div id="adventure"></div>
+
+	<script type="text/javascript">
+		function Kolor(elements) {
+			this.h = 136; // HEX: #80FFA2
+			this.a = document.getElementsByTagName('a');
+			this.bar = document.getElementById('bar');
+			this.adv = document.getElementById('adventure');
+			this.start();
+		}
+
+		Kolor.prototype.start = function() {
+			var that = this;
+			var inter = setInterval(function() {
+				that.h = (that.h < 255) ? that.h+1:0;
+				var newkolor = "hsl("+that.h+",100%, 80%)";
+				for(var e = 0; e < that.a.length; e++) {
+					that.a[e].style.color = newkolor;
+				}
+				that.bar.style.background = newkolor;
+				that.adv.style.background = newkolor;
+			}, 500);
+		}
+
+		window.onload = function() {
+			var mainID = document.getElementById('main'), vidID = document.getElementById('vid'), advID = document.getElementById('adventure');
+
+			vidID.play();
+			vidID.volume = 0;
+			var k = new Kolor();
+
+			document.getElementById('adventure').addEventListener('click',function() {
+				var mainOP = 1, vidOP = 0.2;
+
+				var fadeOut = setInterval(function() {
+					if(mainOP > 0 || vidOP < 1) {
+						mainID.style.opacity = mainOP;
+						advID.style.opacity = mainOP;
+						mainOP -= 0.01;
+						vidID.style.opacity = vidOP;
+						vidOP += 0.01;	
+					} else {
+						vidID.removeAttribute('muted');
+						vidID.volume = 1;
+						vidID.currentTime = 0;
+						clearInterval(fadeOut);
+					}
+				}, 10);
+			},false);
+		}
+	</script>
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -40,6 +89,6 @@
 
 	  ga('create', 'UA-43957530-1', 'jathu.me');
 	  ga('send', 'pageview');
-	</script>	
+	</script>
 </body>
 </html>
