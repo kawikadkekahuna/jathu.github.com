@@ -66,7 +66,7 @@
 		Kolor.prototype.start = function() {
 			var that = this;
 			var inter = setInterval(function() {
-				that.h = (that.h < 255) ? that.h+1:0;
+				that.h = (that.h < 355) ? that.h+1:0;
 				var newkolor = "hsl("+that.h+",100%, 80%)";
 				for(var e = 0; e < that.a.length; e++) {
 					that.a[e].style.color = newkolor;
@@ -86,6 +86,16 @@
 			} else {
 				vidID.play();
 				vidID.volume = 0;
+				var mainOP = 0;
+				var fadeIn = setInterval(function() {
+					if(mainOP < 1) {
+						mainID.style.opacity = mainOP;
+						mainOP += 0.01;
+					} else {
+						mainID.style.opacity = 1;
+						clearInterval(fadeIn);
+					}
+				}, 25);
 			}
 
 			var k = new Kolor();
@@ -102,6 +112,9 @@
 						vidOP += 0.01;	
 					} else {
 						vidID.removeAttribute('muted');
+						mainID.style.opacity = 0;
+						advID.style.opacity = 0;
+						vidID.style.opacity = 1;
 						vidID.volume = 1;
 						vidID.currentTime = 0;
 						clearInterval(fadeOut);
