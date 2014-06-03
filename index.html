@@ -86,19 +86,19 @@
 			} else {
 				vidID.play();
 				vidID.volume = 0;
-				var mainOP = 0;
-				var fadeIn = setInterval(function() {
-					if(mainOP < 1) {
-						mainID.style.opacity = mainOP;
-						mainOP += 0.01;
-					} else {
-						mainID.style.opacity = 1;
-						clearInterval(fadeIn);
-					}
-				}, 25);
 			}
 
-			var k = new Kolor();
+			//Create new Kolor instance and fadein main div
+			var k = new Kolor(), mainOP = 0;
+			var fadeIn = setInterval(function() {
+				if(mainOP < 1) {
+					mainID.style.opacity = mainOP;
+					mainOP += 0.01;
+				} else {
+					mainID.style.opacity = 1;
+					clearInterval(fadeIn);
+				}
+			}, 20);	
 
 			document.getElementById('adventure').addEventListener('click',function() {
 				var mainOP = 1, vidOP = 0.2;
