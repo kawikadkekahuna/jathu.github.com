@@ -79,17 +79,23 @@
 		window.onload = function() {
 			var mainID = document.getElementById('main'), vidID = document.getElementById('vid'), advID = document.getElementById('adventure');
 
-			if(isMobile.any()) {
-				vidID.remove();
-				advID.remove();
-				mainID.className = "mobile";
-			} else {
-				vidID.play();
-				vidID.volume = 0;
+			function screenResControl() {
+				if(isMobile.any() || window.innerWidth <= 725) {
+					vidID.style.opacity = 0;
+					advID.style.opacity = 0;
+					mainID.className = "mobile";
+				} else {
+					mainID.className = "";
+					advID.style.opacity = 1;
+					vidID.style.opacity = 0.2;
+					vidID.play();
+					vidID.volume = 0;
+				}
 			}
 
 			//Create new Kolor instance and fadein main div
 			var k = new Kolor(), mainOP = 0;
+			screenResControl();
 			var fadeIn = setInterval(function() {
 				if(mainOP < 1) {
 					mainID.style.opacity = mainOP;
@@ -98,7 +104,11 @@
 					mainID.style.opacity = 1;
 					clearInterval(fadeIn);
 				}
-			}, 20);	
+			}, 20);
+
+			window.onresize = function() {
+				screenResControl();
+			}
 
 			document.getElementById('adventure').addEventListener('click',function() {
 				var mainOP = 1, vidOP = 0.2;
