@@ -121,9 +121,9 @@
 						vidID.style.opacity = vidOP;
 						vidOP += 0.01;	
 					} else {
+						mainID.remove();
+						advID.remove();
 						vidID.removeAttribute('muted');
-						mainID.style.opacity = 0;
-						advID.style.opacity = 0;
 						vidID.style.opacity = 1;
 						vidID.volume = 1;
 						vidID.currentTime = 0;
