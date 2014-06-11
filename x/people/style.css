@@ -19,10 +19,6 @@ body {
 
 img {
 	border: none;
-	-webkit-transition: opacity 250ms;
-	-moz-transition: opacity 250ms;
-	-o-transition: opacity 250ms;
-	transition: opacity 250ms;
 }
 
 img:hover {

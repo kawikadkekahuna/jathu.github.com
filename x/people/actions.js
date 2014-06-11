@@ -26,7 +26,7 @@ $(window).resize(function() {
 			if(exist.indexOf(i) < 0) {
 				exist.push(i);
 				var li = document.createElement('li');
-				li.style.background = "hsl("+(Math.random()*355)+",100%, 60%)";
+				li.style.background = "hsl("+(Math.random()*355)+",100%, 50%)";
 				var a = document.createElement('a');
 				a.href = people[i].link;
 				a.target = "_blank";
