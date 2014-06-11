@@ -21,12 +21,14 @@ $(window).resize(function() {
 }).load(function() {
 	$.getJSON('people.json', function(people) {
 		var grid = document.getElementById('grid').children[0], exist = [];
+		var kolor = ["57d743", "ffbe2a", "ff5a00", "ff1954", "9135a4", "2a8bcf"], ki = 0;
 		while(exist.length < people.length) {
 			var i = Math.floor(Math.random()*people.length);
 			if(exist.indexOf(i) < 0) {
 				exist.push(i);
 				var li = document.createElement('li');
-				li.style.background = "hsl("+(Math.random()*355)+",100%, 50%)";
+				li.style.background = "#"+kolor[ki];
+				ki = (ki < (kolor.length-1)) ? (ki+1):0;
 				var a = document.createElement('a');
 				a.href = people[i].link;
 				a.target = "_blank";
