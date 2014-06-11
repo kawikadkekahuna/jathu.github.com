@@ -32,7 +32,7 @@ $(window).resize(function() {
 				a.target = "_blank";
 				var div = document.createElement('div');
 				var img = document.createElement('img');
-				img.src = "imgs/"+people[i].name.replace(/\s/g,"_").replace(/\W/g,"")+".jpg";
+				img.src = "imgs/"+people[i].name.toLowerCase().replace(/\s/g,"_").replace(/\W/g,"")+".jpg";
 				div.appendChild(img);
 				a.appendChild(div);
 				li.appendChild(a);
