@@ -64,10 +64,6 @@
 		"link": "http://en.wikipedia.org/wiki/Steve_Wozniak"
 	},
 	{
-		"name": "Steven A. Cohen",
-		"link": "http://en.wikipedia.org/wiki/Steven_A._Cohen"
-	},
-	{
 		"name": "Benjamin Franklin",
 		"link": "http://en.wikipedia.org/wiki/Benjamin_Franklin"
 	},
@@ -82,10 +78,6 @@
 	{
 		"name": "Martin Luther King, Jr.",
 		"link": "http://en.wikipedia.org/wiki/Martin_Luther_King,_Jr."
-	},
-	{
-		"name": "Marilyn Monroe",
-		"link": "http://en.wikipedia.org/wiki/Marilyn_Monroe"
 	},
 	{
 		"name": "Howard Hughes",
@@ -126,5 +118,13 @@
 	{
 		"name": "Jeff Bezos",
 		"link": "http://en.wikipedia.org/wiki/Jeff_Bezos"
+	},
+	{
+		"name": "Richard Feynman",
+		"link": "http://en.wikipedia.org/wiki/Richard_Feynman"
+	},
+	{
+		"name": "Tim Cook",
+		"link": "http://en.wikipedia.org/wiki/Tim_Cook"
 	}
 ]
