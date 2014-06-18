@@ -5,15 +5,10 @@ body {
 	font-family: 'Roboto Slab', 'Georgia', serif;
 }
 
-#bar, #adventure {
-	background: #80FFA2;
-}
-
 a {
 	display: inline;
 	text-decoration: none;
 	padding-bottom: 3px;
-	color: #80FFA2;
 	border-bottom: solid 0px;
 }
 
