@@ -56,10 +56,6 @@
 		"link": "http://en.wikipedia.org/wiki/John_F._Kennedy"
 	},
 	{
-		"name": "Terry Fox",
-		"link": "http://en.wikipedia.org/wiki/Terry_Fox"
-	},
-	{
 		"name": "Steve Wozniak",
 		"link": "http://en.wikipedia.org/wiki/Steve_Wozniak"
 	},
@@ -68,20 +64,12 @@
 		"link": "http://en.wikipedia.org/wiki/Benjamin_Franklin"
 	},
 	{
-		"name": "Gordon Ramsay",
-		"link": "http://en.wikipedia.org/wiki/Gordon_Ramsay"
-	},
-	{
 		"name": "Jimmy Wales",
 		"link": "http://en.wikipedia.org/wiki/Jimmy_Wales"
 	},
 	{
 		"name": "Howard Hughes",
 		"link": "http://en.wikipedia.org/wiki/Howard_Robard_Hughes,_Jr."
-	},
-	{
-		"name": "Thomas J. Watson",
-		"link": "http://en.wikipedia.org/wiki/Thomas_J_Watson"
 	},
 	{
 		"name": "Paul Rand",
