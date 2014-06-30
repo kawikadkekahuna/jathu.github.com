@@ -11,6 +11,7 @@
 			overflow: hidden;
 			margin: 0;
 			padding: 0;
+			cursor: pointer;
 		}
 
 		#a{
@@ -36,13 +37,18 @@
 
 		#a:hover {
 			opacity: 0.8;
-			cursor: pointer;
 		}
 
-		#iframe{
+		iframe{
 			position: fixed;
-			top: 0;
-			left: 0;
+			right: 0;
+			bottom: 0;
+			min-width: 100%;
+			min-height: 100%;
+			width: auto;
+			height: auto;
+			z-index: -100;
+			background-size: cover;
 		}
 	</style>
 </head>
@@ -58,7 +64,7 @@
 				bottom: 100
 			}, 500);
 		    $("#a").fadeOut(500);
-		    $(this).append('<iframe id="radio" src="http://www.youtube.com/embed/WcDx5Ixke-s?autoplay=1&controls=0" frameborder="0" allowfullscreen></iframe>').unbind();
+		    $(this).css('cursor', 'none').append('<iframe id="radio" src="http://www.youtube.com/embed/WcDx5Ixke-s?autoplay=1&controls=0" frameborder="0" allowfullscreen></iframe>').unbind();
 		    frameSize();
 		});
 		function frameSize() {
