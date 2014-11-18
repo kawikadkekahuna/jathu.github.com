@@ -30,7 +30,7 @@ function loadDV(originalDV) {
     the original url and option then call it after viewer
     is finished loading.
   */
-  var originalDV = {};
+  var originalDV = window.DV.loadOriginalDV || {};
   DV.load = function(url, option) {
     originalDV.url = url;
     originalDV.option = option;
