@@ -11,7 +11,8 @@ function loadCSS(url, media) {
   document.getElementsByTagName('head')[0].appendChild(link);
 }
 
-function loadDV(originalDV) {
+function loadDV() {
+  var originalDV = window.DV.loadOriginalDocSummaryDV;
   if(!!originalDV.url && !!originalDV.option) {
     DV.load(originalDV.url, originalDV.option);
   }
@@ -30,10 +31,12 @@ function loadDV(originalDV) {
     the original url and option then call it after viewer
     is finished loading.
   */
-  var originalDV = window.DV.loadOriginalDocSummaryDV || {};
+  if(!window.DV.loadOriginalDocSummaryDV) {
+    window.DV.loadOriginalDocSummaryDV = {};
+  }
   DV.load = function(url, option) {
-    originalDV.url = url;
-    originalDV.option = option;
+    window.DV.loadOriginalDocSummaryDV.url = url;
+    window.DV.loadOriginalDocSummaryDV.option = option;
   }
 
   // Request the viewer JavaScript.
@@ -45,12 +48,12 @@ function loadDV(originalDV) {
     viewerjs.onreadystatechange = function() {
       if(viewerjs_state == 'loaded' || viewerjs_state == 'complete') {
         viewerjs.onreadystatechange = null;
-        loadDV(originalDV);
+        loadDV();
       }
     }
   } else {
     viewerjs.onload = function() {
-      loadDV(originalDV);
+      loadDV();
     }
   }
   document.getElementsByTagName('head')[0].appendChild(viewerjs);
