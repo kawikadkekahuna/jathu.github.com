@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MD5</title>
+	<script src="md5.js"></script>
+	<style type="text/css">
+		body {
+			background: #FFF;
+			color: #000;
+			font-family: Helvetica;
+			margin: 0;
+			padding: 20px;
+		}
+
+		#container {
+			width: 100%;
+			height: auto;
+			position: absolute;
+			top: 45%;
+			left: 0px;
+		}
+
+		h1 {
+			font-size: 20px;
+			font-weight: 100;
+			margin: 0;
+			padding: 0;
+		}
+
+		#hash::selection {
+			background: #000;
+			color: #FFF;
+		}
+
+		#hash::-moz-selection {
+			background: #000;
+			color: #FFF;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="container">
+		<center>
+			<h1 id="hash"></h1>
+		</center>
+	</div>
+
+	<script>
+		var INCR = 1, hash = document.getElementById('hash'), INTER = null;
+
+		function gen() {
+			var base = "jathuwashere-"+Date.now()+"-"+(INCR++);
+			hash.innerHTML = md5(base);
+		}
+
+		document.onmousedown = function() {
+			clearInterval(INTER);
+			INTER = setInterval(gen, 1);
+		};
+
+		document.onmouseup = function() {
+			clearInterval(INTER);
+		}
+
+		gen();
+	</script>
+
+</body>
+</html>
