@@ -34,11 +34,17 @@ body {
 }
 
 p {
+	font-family: georgia, 'times new roman', times, serif;
 	text-align: left;
-	color: #EDEDED;
+	color: rgba(210, 210, 210, 255);
+	font-weight: 100;
+	font-size: 16px;
+	line-height: 26px;
+}
+
+b {
 	font-weight: 200;
-	font-size: 15px;
-	line-height: 25px;
+	color: rgba(240, 240, 240, 255);
 }
 
 h1 {
@@ -62,8 +68,4 @@ h3 {
 	font-size: 15px;
 	margin: 50px 0px;
 	padding: 0px;	
-}
-
-b {
-	font-weight: 400;
 }
