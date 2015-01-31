@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Icons</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+	<center><div id="container">
+		<div id="header">
+			<h1>Icons</h1>
+			<p>This is a collection of icons from the (g)olden days of the X-GUI sites and desk modding. Majority of the icons are from GalaxyGUI and Macthemes. I have archived them for nostalgia. If you have an icon to add to the collection or if you want me to remove <b><i>your</i></b> icon, please make a <a href="https://github.com/jathu/jathu.github.com/tree/master/x/icons">pull request</a>. I understand many of these icons were once NFR (haha). Enjoy!</p>
+		</div>
+		<ul id="icons"></ul>
+	</div></center>
+
+<script type="text/javascript">
+	// Primitive way to store max file number
+	var MAX = 549;
+	var ul = document.getElementById("icons");
+
+	for(var i = 1; i <= MAX; i++) {
+		var li = document.createElement("li");
+		var a = document.createElement("a");
+		a.href = "icons/"+i+".png";
+		a.setAttribute("target","_blank");
+		var img = document.createElement("img");
+		img.src = "icons/"+i+".png";
+
+		li.appendChild(img);
+		a.appendChild(li);
+		ul.appendChild(a);
+	}
+
+</script>
+</body>
+</html>
