@@ -15,24 +15,14 @@
 		<ul id="icons"></ul>
 	</div></center>
 
-<script type="text/javascript">
-	// Primitive way to store max file number
-	var MAX = 549;
-	var ul = document.getElementById("icons");
+	<div id="selected">
+		<center><span>
+				<a href="#" target="_blank" id="selected-download">Download</a>
+				<a href="#" target="_blank" id="selected-artist">Artist</a>
+		</span></center>
+		<img id="selected-img" />
+	</div>
 
-	for(var i = 1; i <= MAX; i++) {
-		var li = document.createElement("li");
-		var a = document.createElement("a");
-		a.href = "icons/"+i+".png";
-		a.setAttribute("target","_blank");
-		var img = document.createElement("img");
-		img.src = "icons/"+i+".png";
-
-		li.appendChild(img);
-		a.appendChild(li);
-		ul.appendChild(a);
-	}
-
-</script>
+<script type="text/javascript" src="script.js"></script>
 </body>
 </html>
