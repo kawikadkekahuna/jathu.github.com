@@ -1,4 +1,8 @@
 var ICON = {
+	"64": {
+		"artist": "Panic Candybar",
+		"link": "http://panic.com/"
+	},
 	"355": {
 		"artist": "Jonas Rask",
 		"link": "https://twitter.com/jonasrask"
@@ -9,24 +13,6 @@ var ICON = {
 
 
 // STUFF BELOW
-
-function setSelected(obj) {
-	document.getElementById("selected").style.display = "inline";
-	document.getElementById("selected-img").src = obj.getImgSrc();
-	document.getElementById("selected-download").href = obj.getImgSrc();
-
-	var a = document.getElementById("selected-artist");
-	if(obj.getInfo() != null) {
-		a.innerHTML = "By: "+obj.getInfo().artist;
-		a.href = obj.getInfo().link;
-		a.setAttribute("target","_blank");
-	} else {
-		a.innerHTML = "By: Unknown";
-		a.href = "#";
-		a.setAttribute("target","");
-	}
-}
-
 var UL = document.getElementById("icons");
 
 function Con(num) {
@@ -35,13 +21,18 @@ function Con(num) {
 	this.init = function() {
 		self.number = num;
 		self.el = document.createElement("li");
-		self.el.setAttribute("title", self.number);
 		self.img = document.createElement("img");
+		self.img.setAttribute("title", self.number);
 		self.img.src = "icons/"+self.number+".png";
+		self.div = document.createElement("div");
+		self.div.className = "info";
+		var info = self.getInfo();
+		self.div.innerHTML = "<br /><br /><a target='_blank' href='"+self.img.src+"'>Download</a>";
+		if(info != null) {
+			self.div.innerHTML += "<br />By: <a target='_blank' href='"+info.link+"'>"+info.artist+"</a>";
+		}
 		self.el.appendChild(self.img);
-		self.el.addEventListener("click", function() {
-			setSelected(self);
-		});
+		self.el.appendChild(self.div);
 		UL.appendChild(self.el);
 	}
 
