@@ -95,3 +95,11 @@ var contFadeIn = setInterval(function() {
 		clearInterval(contFadeIn);
 	}
 }, 20);
+
+function centerCont() {
+	cont.style.left = ((window.innerWidth/2) - (cont.offsetWidth/2))+"px";
+	cont.style.top = ((window.innerHeight/2) - (cont.offsetHeight/2))+"px";	
+}
+
+window.onresize = centerCont;
+centerCont();
