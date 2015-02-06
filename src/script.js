@@ -1,12 +1,3 @@
-function genGradientVector() {
-	var RANGE = 10;
-	var f = function() {
-		return Math.floor(Math.random() * ((RANGE*2)+1)) - RANGE;
-	}
-	var vec = [f(), f()];
-	return (vec[0] == 0 && vec[1] == 0) ? genGradientVector():vec;
-}
-
 function Ball(ctx, x, y) {
 	var self = this;
 
@@ -18,7 +9,16 @@ function Ball(ctx, x, y) {
 		self.color = randomColor({
 			luminosity: "light"
 		});
-		self.gradientVector = genGradientVector();
+		self.gradientVector = self.generateGradient();
+	}
+
+	this.generateGradient = function() {
+		var RANGE = 10;
+		var f = function() {
+			return Math.floor(Math.random() * ((RANGE*2)+1)) - RANGE;
+		}
+		var vec = [f(), f()];
+		return (vec[0] == 0 && vec[1] == 0) ? self.generateGradient():vec;
 	}
 
 	this.draw = function() {
