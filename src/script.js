@@ -41,10 +41,10 @@ var canvas = document.getElementById('space');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 var ctx = canvas.getContext('2d');
-MAXdX = canvas.offsetWidth;
-MAXdY = canvas.offsetHeight;
-MINRADIUS = 5;
-MAXRADIUS = 15;
+var MAXdX = canvas.offsetWidth;
+var MAXdY = canvas.offsetHeight;
+var MINRADIUS = 5;
+var MAXRADIUS = 15;
 var MYBALLS = [];
 for(var i = 0; i < 100; i++) {
 	MYBALLS.push(new Ball(ctx));
@@ -86,3 +86,12 @@ document.addEventListener('mousemove', function(e) {
 		burst(e, 5);
 	}
 }, false);
+
+var cont = document.getElementById('container'), OPACITY = 0;
+var contFadeIn = setInterval(function() {
+	if(OPACITY < 1) {
+		cont.style.opacity = (OPACITY += 0.01);
+	} else {
+		clearInterval(contFadeIn);
+	}
+}, 20);
