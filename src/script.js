@@ -21,7 +21,7 @@ function Ball(ctx, x, y) {
 		self.gradientVector = genGradientVector();
 	}
 
-	self.draw = function() {
+	this.draw = function() {
 		self.ctx.beginPath();
 		self.ctx.arc(self.x, self.y, self.radius, 0, 2 * Math.PI, false);
 		self.ctx.fillStyle = self.color;
@@ -30,7 +30,7 @@ function Ball(ctx, x, y) {
 		self.y += self.gradientVector[1];
 	}
 
-	self.inSpace = function() {
+	this.inSpace = function() {
 		return ((self.x >= 0 && self.x <= MAXdX) || (self.y >= 0 && self.y <= MAXdY));
 	}
 
