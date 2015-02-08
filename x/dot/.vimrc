@@ -17,15 +17,11 @@ Plugin 'chriskempson/base16-vim'
 call vundle#end()
 filetype plugin indent on
 
-"
-"
-" CONFIGS
-"
-"
-
 
 " Remap NERDTree to Ctrl+n
 map <silent> <C-n> :NERDTree<cr>
+" Remap pane switch to t
+map <silent> t <C-w>
 
 " Style
 syntax on
