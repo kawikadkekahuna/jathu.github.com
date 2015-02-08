@@ -1,4 +1,4 @@
-" @jathu was here
+ @jathu was here
 
 if !isdirectory(expand("~/.vim/bundle/vundle"))
 	call system("git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle")
@@ -20,8 +20,11 @@ filetype plugin indent on
 
 " Remap NERDTree to Ctrl+n
 map <silent> <C-n> :NERDTree<cr>
-" Remap pane switch to t
-map <silent> t <C-w>
+" Remap pane switch
+noremap <Space><Up>    <C-w>k
+noremap <Space><Down>  <C-w>j
+noremap <Space><Left>  <C-w>h
+noremap <Space><Right> <C-w>l
 
 " Style
 syntax on
