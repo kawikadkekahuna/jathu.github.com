@@ -7,18 +7,15 @@ endif
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+call vundle#begin()
 
-Bundle 'scrooloose/nerdtree'
-Bundle 'kchmck/vim-coffee-script'
+Plugin 'gmarik/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'chriskempson/base16-vim'
 
-if !isdirectory(expand("~/.vim/bundle/vim-airline"))
-	execute 'silent BundleInstall'
-	execute 'silent q'
-endif
-
+call vundle#end()
 filetype plugin indent on
-syntax on
 
 "
 "
@@ -30,6 +27,12 @@ syntax on
 " Remap NERDTree to Ctrl+n
 map <silent> <C-n> :NERDTree<cr>
 
+" Style
+syntax on
+set background=dark
+colorscheme base16-chalk 
+
+" Other configs
 set tabstop=2						" Tab to 2 spaces
 set shiftwidth=2				" Tab to 2 spaces
 set softtabstop=2				" Tab to 2 spaces
