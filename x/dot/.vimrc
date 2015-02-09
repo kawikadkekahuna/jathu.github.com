@@ -26,6 +26,8 @@ noremap <Space><Up>    <C-w>k
 noremap <Space><Down>  <C-w>j
 noremap <Space><Left>  <C-w>h
 noremap <Space><Right> <C-w>l
+" Remap HackerNews plugin
+map :HN :HackerNews
 
 " Style
 syntax on
