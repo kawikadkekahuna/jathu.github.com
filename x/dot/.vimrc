@@ -13,6 +13,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'chriskempson/base16-vim'
+Plugin 'ryanss/vim-hackernews'
 
 call vundle#end()
 filetype plugin indent on
