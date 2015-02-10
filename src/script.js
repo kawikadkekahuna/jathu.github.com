@@ -68,7 +68,7 @@ setInterval(function() {
 function burst(e, amount) {
 	for(var i = 0; i < amount; i++) {
 		MYBALLS.push(new Ball(ctx, e.pageX, e.pageY));
-	}	
+	}
 }
 
 CLICKING = false;
@@ -82,8 +82,6 @@ document.addEventListener('mouseup', function(e) {
 document.addEventListener('mousemove', function(e) {
 	if(CLICKING) {
 		burst(e, 1);
-	} else if(e.target.tagName.toUpperCase() == "A") {
-		burst(e, 5);
 	}
 }, false);
 
@@ -98,7 +96,7 @@ var contFadeIn = setInterval(function() {
 
 function centerCont() {
 	cont.style.left = ((window.innerWidth/2) - (cont.offsetWidth/2))+"px";
-	cont.style.top = ((window.innerHeight/2) - (cont.offsetHeight/2))+"px";	
+	cont.style.top = ((window.innerHeight/2) - (cont.offsetHeight/2))+"px";
 }
 
 window.onresize = centerCont;
