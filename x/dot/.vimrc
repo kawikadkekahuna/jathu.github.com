@@ -12,8 +12,9 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'chriskempson/base16-vim'
 Plugin 'ryanss/vim-hackernews'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
 call vundle#end()
 filetype plugin indent on
@@ -29,14 +30,22 @@ noremap <Space><Left>  <C-w>h
 noremap <Space><Right> <C-w>l
 " Remap HackerNews plugin
 map :HN :HackerNews
-" Map for faster save
-inoremap <C-x> <esc>:w!<cr>a
-map <silent> <C-x> :w!<cr>
+" Highlight search
+nnoremap <silent> n n:call HLNext(0.5)<cr>
+nnoremap <silent> N N:call HLNext(0.5)<cr>
+
+function! HLNext(blinktime)
+	set invcursorline
+	redraw
+	exec 'sleep '.float2nr(a:blinktime * 1000).'m'
+	set invcursorline
+	redraw
+endfunction
 
 " Style
 syntax on
 set background=dark
-colorscheme base16-chalk
+colorscheme chalk
 autocmd BufWritePre * :%s/\s\+$//e
 
 " Other configs
@@ -54,3 +63,4 @@ set incsearch								" 'live' search resuts
 set splitright							" Open new panes to the right
 set autoindent							"	Auto indent
 set mouse=a									" Allow scrolling in iTerm
+set paste										" No autoindent on paste
