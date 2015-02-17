@@ -15,6 +15,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'ryanss/vim-hackernews'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'chriskempson/base16-vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -22,18 +23,20 @@ filetype plugin indent on
 
 " Remap NERDTree to Ctrl+n
 map <silent> <C-n> :NERDTree<cr>
+
 " Remap pane switch
 noremap <Space> <C-w>
-noremap <Space><Up>    <C-w>k
-noremap <Space><Down>  <C-w>j
-noremap <Space><Left>  <C-w>h
+noremap <Space><Up> <C-w>k
+noremap <Space><Down> <C-w>j
+noremap <Space><Left> <C-w>h
 noremap <Space><Right> <C-w>l
+
 " Remap HackerNews plugin
 map :HN :HackerNews
+
 " Highlight search
 nnoremap <silent> n n:call HLNext(0.5)<cr>
 nnoremap <silent> N N:call HLNext(0.5)<cr>
-
 function! HLNext(blinktime)
 	set invcursorline
 	redraw
@@ -42,25 +45,44 @@ function! HLNext(blinktime)
 	redraw
 endfunction
 
+" Start new lines without entering insert mode
+nmap O  o<Esc>
+
 " Style
 syntax on
 set background=dark
 colorscheme chalk
+" Delete trailing white spaces
 autocmd BufWritePre * :%s/\s\+$//e
 
-" Other configs
-set tabstop=2								" Tab to 2 spaces
-set shiftwidth=2						" Tab to 2 spaces
-set softtabstop=2						" Tab to 2 spaces
-set autoread								" Autoload buffer when file changes
-set clipboard=unnamedplus		" Use system clipboard
-set encoding=utf-8					" Default encoding
-set noswapfile							" No buffer swap files
-set number									" Show line numbers
-set showcmd									" Show commnad line at the bottom
-set ignorecase							" Ignore case for patter matching
-set incsearch								" 'live' search resuts
-set splitright							" Open new panes to the right
-set autoindent							"	Auto indent
-set mouse=a									" Allow scrolling in iTerm
-set paste										" No autoindent on paste
+" Tab to 2 spaces
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+" Autoload buffer when file changes
+set autoread
+" Use system clipboard
+set clipboard=unnamedplus
+" Default encoding
+set encoding=utf-8
+" No buffer swap files
+set noswapfile
+" Show line numbers
+set number
+" Show commnad line at the bottom
+set showcmd
+" Ignore case for pattern matching
+set ignorecase
+" 'live' search resuts
+set incsearch
+" Open new panes to the right
+set splitright
+"	Auto indent
+set autoindent
+" Allow scrolling
+set mouse=a
+" No autoindent on paste
+set paste
+" Mark 80 char line
+set textwidth=80
+set colorcolumn=+1
