@@ -69,11 +69,11 @@ set encoding=utf-8
 set noswapfile
 " Show line numbers
 set number
-" Show commnad line at the bottom
+" Show command line at the bottom
 set showcmd
 " Ignore case for pattern matching
 set ignorecase
-" 'live' search resuts
+" 'live' search results
 set incsearch
 " Open new panes to the right
 set splitright
@@ -86,3 +86,9 @@ set paste
 " Mark 80 char line
 set textwidth=80
 set colorcolumn=+1
+" Spell Check
+set spell spelllang=en_us
+autocmd BufRead,BufNewFile *.md setlocal spell
+autocmd BufRead,BufNewFile *.markdown setlocal spell
+" Turn off folding
+set nofoldenable
