@@ -20,20 +20,18 @@ Plugin 'chriskempson/base16-vim'
 call vundle#end()
 filetype plugin indent on
 
+" =============================================================================
 
 " Remap NERDTree to Ctrl+n
 map <silent> <C-n> :NERDTree<cr>
-
 " Remap pane switch
 noremap <Space> <C-w>
 noremap <Space><Up> <C-w>k
 noremap <Space><Down> <C-w>j
 noremap <Space><Left> <C-w>h
 noremap <Space><Right> <C-w>l
-
 " Remap HackerNews plugin
 map :HN :HackerNews
-
 " Highlight search
 nnoremap <silent> n n:call HLNext(0.5)<cr>
 nnoremap <silent> N N:call HLNext(0.5)<cr>
@@ -44,9 +42,12 @@ function! HLNext(blinktime)
 	set invcursorline
 	redraw
 endfunction
-
 " Start new lines without entering insert mode
 nmap O  o<Esc>
+" Force paste to use register 0
+nnoremap <silent> p "0p<cr>
+
+" =============================================================================
 
 " Style
 syntax on
@@ -54,6 +55,13 @@ set background=dark
 colorscheme chalk
 " Delete trailing white spaces
 autocmd BufWritePre * :%s/\s\+$//e
+" Change status line if in insert mode
+au InsertEnter * hi StatusLine ctermbg=20 ctermfg=Black
+au InsertLeave * hi StatusLine ctermbg=0 ctermfg=11
+hi StatusLine ctermbg=0 ctermfg=11
+hi LineNr ctermbg=0 ctermfg=11
+
+" =============================================================================
 
 " Tab to 2 spaces
 set tabstop=2
@@ -83,12 +91,14 @@ set autoindent
 set mouse=a
 " No autoindent on paste
 set paste
-" Mark 80 char line
-set textwidth=80
-set colorcolumn=+1
 " Spell Check
 set spell spelllang=en_us
 autocmd BufRead,BufNewFile *.md setlocal spell
 autocmd BufRead,BufNewFile *.markdown setlocal spell
 " Turn off folding
 set nofoldenable
+" Show status line
+set laststatus=2
+" Show column and row numbers in status line
+set ruler
+
