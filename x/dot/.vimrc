@@ -13,7 +13,6 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'ryanss/vim-hackernews'
-Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'chriskempson/base16-vim'
 
@@ -52,14 +51,12 @@ nnoremap <silent> p "0p<cr>
 " Style
 syntax on
 set background=dark
-colorscheme chalk
+colorscheme euphrasia
 " Delete trailing white spaces
 autocmd BufWritePre * :%s/\s\+$//e
 " Change status line if in insert mode
-au InsertEnter * hi StatusLine ctermbg=20 ctermfg=Black
-au InsertLeave * hi StatusLine ctermbg=0 ctermfg=11
-hi StatusLine ctermbg=0 ctermfg=11
-hi LineNr ctermbg=0 ctermfg=11
+au InsertEnter * hi StatusLine ctermbg=red ctermfg=Black
+au InsertLeave * hi StatusLine ctermbg=0 ctermfg=7
 
 " =============================================================================
 
