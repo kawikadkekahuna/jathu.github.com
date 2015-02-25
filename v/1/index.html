@@ -12,17 +12,17 @@
 	<link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 <body>
-	
+
 	<!-- Video Credit: https://www.youtube.com/watch?v=m6ugFcwsgpE -->
 	<video loop id="vid">
-		<source src="imgs/sagan.mp4" type="video/mp4">
+		<source src="http://jathu.me/x/media/sagan.mp4" type="video/mp4">
 	</video>
 
 	<div id="bar"></div>
 
 	<div id="main">
 		<p>Hello.</p>
-	
+
 		<p>My name is Jathu Satkunarajah. I am <a href="http://linkedin.com/in/jathus" target="_blank">currently studying</a> computer science and mathematics at the University of Toronto.<p>
 
 		<p>I love to <a href="https://github.com/jathu" target="_blank">develop software</a> and <a href="https://dribbble.com/jathu" target="_blank">design UI</a>. I also <a href="https://twitter.com/jathu" target="_blank">tweet</a> from time to time.<p>
@@ -52,8 +52,8 @@
 		        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
 		    }
 		},
-		mainID = document.getElementById('main'), 
-		vidID = document.getElementById('vid'), 
+		mainID = document.getElementById('main'),
+		vidID = document.getElementById('vid'),
 		advID = document.getElementById('adventure'),
 		barID = document.getElementById('bar'),
 		aList = document.getElementsByTagName('a');
@@ -64,7 +64,7 @@
 				aList[i].style.color = newColor;
 			}
 			barID.style.background = newColor;
-			advID.style.background = newColor;			
+			advID.style.background = newColor;
 		}
 
 		function controlColor() {
@@ -73,7 +73,7 @@
 			var inter = setInterval(function() {
 				hue = (hue < 360) ? hue+1:0;
 				setColor(hue);
-			}, 500);			
+			}, 500);
 		}
 
 		var iniSet = false;
@@ -102,7 +102,7 @@
 					advID.style.opacity = mainOP;
 					mainOP -= 0.01;
 					vidID.style.opacity = vidOP;
-					vidOP += 0.01;	
+					vidOP += 0.01;
 				} else {
 					mainID.remove();
 					advID.remove();
