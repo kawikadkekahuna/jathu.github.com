@@ -11,10 +11,13 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'ryanss/vim-hackernews'
-Plugin 'plasticboy/vim-markdown'
 Plugin 'chriskempson/base16-vim'
+
+" Syntax highlighters
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'vim-scripts/JavaScript-syntax'
 
 call vundle#end()
 filetype plugin indent on
@@ -44,7 +47,7 @@ endfunction
 " Start new lines without entering insert mode
 nmap O  o<Esc>
 " Force paste to use register 0
-nnoremap <silent> p "0p<cr>
+nnoremap <silent> p "0p
 
 " =============================================================================
 
