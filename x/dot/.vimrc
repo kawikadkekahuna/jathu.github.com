@@ -24,16 +24,15 @@ filetype plugin indent on
 
 " =============================================================================
 
-" Remap NERDTree to Ctrl+n
+" Remap NERDTree to ctrl+n
 map <silent> <C-n> :NERDTree<cr>
 " Remap pane switch
-noremap <Space> <C-w>
-noremap <Space><Up> <C-w>k
-noremap <Space><Down> <C-w>j
-noremap <Space><Left> <C-w>h
-noremap <Space><Right> <C-w>l
+noremap <Space><Up>			<C-w>k
+noremap <Space><Down>		<C-w>j
+noremap <Space><Left>		<C-w>h
+noremap <Space><Right>	<C-w>l
 " Remap HackerNews plugin
-map :HN :HackerNews
+map :HN :HackerNews<cr>
 " Highlight search
 nnoremap <silent> n n:call HLNext(0.5)<cr>
 nnoremap <silent> N N:call HLNext(0.5)<cr>
