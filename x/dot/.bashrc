@@ -8,3 +8,4 @@ alias web="cd ~/Google\ Drive/Documents/Development/jathu.github.com"
 alias scratch="cd ~/Google\ Drive/Scratch"
 
 alias note="pandoc notes.md -o notes.pdf"
+alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
