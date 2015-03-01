@@ -1,56 +1,64 @@
-body {
-	background: #FFF;
-	color: #111;
-	margin: 0;
-	padding: 0;
-	font-family: 'Roboto Slab', 'Georgia', serif;
+@font-face {
+	font-family: Inconsolata;
+	src: url('Inconsolata-Regular.ttf');
 }
 
-canvas {
-	position: fixed;
-	top: 0px;
-	left: 0px;
+body {
+	background: #070707;
+	margin: 0;
+	padding: 0;
+	font-family: 'Inconsolata', serif;
+	font-size: 13px;
+	line-height: 20px;
+}
+
+body, a {
+	color: #FFF;
 }
 
 #container {
-	background: rgba(255,255,255, 0.80);
-	position: fixed;
 	width: 90%;
-	max-width: 700px;
-	padding: 20px;
-	font-size: 20px;
-	line-height: 30px;
+	max-width: 500px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	overflow: hidden;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-khtml-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-	opacity: 0;
 }
 
 a {
 	text-decoration: none;
-	color: #666;
-	padding-bottom: 1px;
-	border-bottom: solid 1px #666;
-	-webkit-transition: padding-bottom 100ms ease-in-out;
-	-moz-transition: padding-bottom 100ms ease-in-out;
-	-ms-transition: padding-bottom 100ms ease-in-out;
-	-o-transition: padding-bottom 100ms ease-in-out;
-	transition: padding-bottom 100ms ease-in-out;
+	padding-bottom: 2px;
+	color: rgba(255, 255, 255, 0.8);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+	-webkit-transition: color 100ms ease-in-out;
+	-moz-transition: color 100ms ease-in-out;
+	-ms-transition: color 100ms ease-in-out;
+	-o-transition: color 100ms ease-in-out;
+	transition: color 100ms ease-in-out;
 }
 
-a:hover {
-	padding-bottom: 4px;
+a.linkedin:hover {
+	color: #0077B5;
+	border-bottom: 1px solid #0077B5;
 }
 
-#footer {
-	position: fixed;
-	width: 100%;
-	bottom: 0px;
-	left: 0px;
-	padding: 10px 0px;
-	font-size: 10px;
-	text-align: center;
+a.github:hover {
+	color: #6CC644;
+	border-bottom: 1px solid #6CC644;
+}
+
+a.dribbble:hover {
+	color: #EA4C89;
+	border-bottom: 1px solid #EA4C89;
+}
+
+a.twitter:hover {
+	color: #55ACEE;
+	border-bottom: 1px solid #55ACEE;
 }
