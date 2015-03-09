@@ -58,6 +58,11 @@ a.dribbble:hover {
 	border-bottom: 1px solid #EA4C89;
 }
 
+a.blog:hover {
+	color: #FFFC00;
+	border-bottom: 1px solid #FFFC00;
+}
+
 a.twitter:hover {
 	color: #55ACEE;
 	border-bottom: 1px solid #55ACEE;
