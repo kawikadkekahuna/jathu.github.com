@@ -1,24 +1,14 @@
-@font-face {
-	font-family: Inconsolata;
-	src: url('Inconsolata-Regular.ttf');
-}
-
 body {
-	background: #070707;
+	background-color: #111;
+	background-image: url(imgs/bg.png);
 	margin: 0;
 	padding: 0;
-	font-family: 'Inconsolata', serif;
-	font-size: 13px;
-	line-height: 20px;
-}
-
-body, a {
-	color: #FFF;
+	font-family: 'Helvetica', sans-serif;
 }
 
 #container {
 	width: 90%;
-	max-width: 500px;
+	max-width: 550px;
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -29,41 +19,26 @@ body, a {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+
+	color: #777;
+	font-size: 14px;
+	line-height: 24px;
+	letter-spacing: 1px;
 }
 
 a {
+	color: #777;
+	border-bottom: 1px solid #111;
 	text-decoration: none;
 	padding-bottom: 2px;
-	color: rgba(255, 255, 255, 0.8);
-	border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-	-webkit-transition: color 100ms ease-in-out;
-	-moz-transition: color 100ms ease-in-out;
-	-ms-transition: color 100ms ease-in-out;
-	-o-transition: color 100ms ease-in-out;
-	transition: color 100ms ease-in-out;
+	-webkit-transition: border-bottom 100ms ease-in-out;
+	-moz-transition:  border-bottom 100ms ease-in-out;
+	-ms-transition:  border-bottom 100ms ease-in-out;
+	-o-transition:  border-bottom 100ms ease-in-out;
+	transition:  border-bottom 100ms ease-in-out;
 }
 
-a.linkedin:hover {
-	color: #0077B5;
-	border-bottom: 1px solid #0077B5;
+a:hover {
+	border-bottom: 1px solid #FFF;
 }
 
-a.github:hover {
-	color: #6CC644;
-	border-bottom: 1px solid #6CC644;
-}
-
-a.dribbble:hover {
-	color: #EA4C89;
-	border-bottom: 1px solid #EA4C89;
-}
-
-a.blog:hover {
-	color: #FFFC00;
-	border-bottom: 1px solid #FFFC00;
-}
-
-a.twitter:hover {
-	color: #55ACEE;
-	border-bottom: 1px solid #55ACEE;
-}
