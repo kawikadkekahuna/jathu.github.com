@@ -13,12 +13,43 @@
 			padding: 20px;
 		}
 
+		#count {
+			text-align: right;
+			font-size: 11px;
+			position: fixed;
+			left: 10px;
+			top: 10px;
+			width: calc(100% - 20px);
+			opacity: 0.5;
+		}
+
 		#container {
 			width: 100%;
 			height: auto;
 			position: absolute;
 			top: 45%;
 			left: 0px;
+		}
+
+		#in-container {
+			position: fixed;
+			overflow: hidden;
+			width: 96%;
+			padding: 2%;
+			bottom: 0px;
+			left: 0px;
+		}
+
+		input {
+			font-size: 30px;
+			border: none;
+			width: 100%;
+			outline: none;
+			opacity: 0.15;
+		}
+
+		input:focus {
+			opacity: 1;
 		}
 
 		h1 {
@@ -40,18 +71,29 @@
 	</style>
 </head>
 <body>
+	<div id="count">234</div>
+
 	<div id="container">
 		<center>
 			<h1 id="hash"></h1>
 		</center>
 	</div>
 
+	<div id="in-container">
+		<input id="string" placeholder="string..." />
+	</div>
+
 	<script>
-		var INCR = 1, hash = document.getElementById('hash'), INTER = null;
+		var INCR = -1, 
+		INTER = null, 
+		hash = document.getElementById('hash'), 
+		input = document.getElementById('string'),
+		count = document.getElementById('count');
 
 		function gen() {
-			var base = "jathuwashere-"+Date.now()+"-"+(INCR++);
+			var base = (input.value.length == 0) ? "jathuwashere-"+Date.now()+"-"+(INCR++):input.value;
 			hash.innerHTML = md5(base);
+			count.innerHTML = "#"+INCR;
 		}
 
 		document.onmousedown = function() {
@@ -63,7 +105,9 @@
 			clearInterval(INTER);
 		}
 
-		gen();
+		input.addEventListener('keyup', gen, false);
+
+		window.onload = gen;
 	</script>
 </body>
 </html>
