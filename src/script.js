@@ -3,7 +3,7 @@ CTX = SPACE.getContext('2d'),
 H = 0,
 PATH = [];
 
-function draw() {
+function draw(alt) {
 	CTX.clearRect(0,0, SPACE.width, SPACE.height);
 	var now = Date.now();
 	for(var i = 0; i < PATH.length - 1; i++) {
@@ -17,7 +17,7 @@ function draw() {
 			CTX.stroke();
 		}
 	}
-	H = (H < 359) ? H+1:0;
+	if(!!alt) H = (H < 359) ? H+1:0;
 }
 
 function update() {
@@ -33,7 +33,7 @@ window.onload = function() {
 	update();
 	document.addEventListener('mousemove', function(e) {
 		PATH.push([e.clientX, e.clientY, H, Date.now()]);
-		draw();
+		draw(true);
 	}, false);
 	setInterval(draw, 1);
 };
