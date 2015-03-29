@@ -1,26 +1,41 @@
-function centerContainer() {
+var SPACE = document.getElementById('space'),
+CTX = SPACE.getContext('2d'), 
+H = 0,
+PATH = [];
+
+function draw() {
+	CTX.clearRect(0,0, SPACE.width, SPACE.height);
+	var now = Date.now();
+	for(var i = 0; i < PATH.length - 1; i++) {
+		var alpha = 1 - (now - PATH[i][3])/1500;
+		if(alpha > 0.001) {
+			CTX.beginPath();
+			CTX.moveTo(PATH[i][0], PATH[i][1]);
+			CTX.lineTo(PATH[i+1][0], PATH[i+1][1]);
+			CTX.strokeStyle = "hsla("+PATH[i][2]+",100%, 50%, "+alpha+")";
+			CTX.lineWidth = 2;
+			CTX.stroke();
+		}
+	}
+	H = (H < 359) ? H+1:0;
+}
+
+function update() {
+	SPACE.width = window.innerWidth;
+	SPACE.height = window.innerHeight;
+
 	var container = document.getElementById('container');
 	container.style.marginLeft = Math.floor(container.offsetWidth/-2)+"px";
 	container.style.marginTop = Math.floor(container.offsetHeight/-2)+"px";
 }
 
 window.onload = function() {
-	centerContainer();
+	update();
+	document.addEventListener('mousemove', function(e) {
+		PATH.push([e.clientX, e.clientY, H, Date.now()]);
+		draw();
+	}, false);
+	setInterval(draw, 1);
+};
 
-	var H = Math.floor(Math.random() * 358) + 1, B = 1;
-	var el = document.getElementsByTagName('a');
-
-	setInterval(function() {
-		for(var i = 0; i < el.length; i++) {
-			el[i].style.color = "hsl("+H+", 100%, 95%)";
-		}
-		if(H == 360) {
-			B = -1;
-		} else if(H == 0) {
-			B = 1;
-		}
-		H += B;
-	}, 10);
-}
-
-window.onresize = centerContainer;
+window.onresize = update;

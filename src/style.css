@@ -1,9 +1,14 @@
 body {
-	background-color: #111;
-	background-image: url(imgs/bg.png);
+	background-color: #FFF;
 	margin: 0;
 	padding: 0;
 	font-family: 'Helvetica', sans-serif;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 #container {
@@ -13,32 +18,27 @@ body {
 	left: 50%;
 	top: 50%;
 	overflow: hidden;
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
 
-	color: #777;
+	color: #999;
 	font-size: 14px;
-	line-height: 24px;
+	line-height: 25px;
 	letter-spacing: 1px;
 }
 
 a {
-	color: #777;
-	border-bottom: 1px solid #111;
+	color: #111;
+	border-bottom: 1px solid #CCC;
 	text-decoration: none;
-	padding-bottom: 2px;
-	-webkit-transition: border-bottom 100ms ease-in-out;
-	-moz-transition:  border-bottom 100ms ease-in-out;
-	-ms-transition:  border-bottom 100ms ease-in-out;
-	-o-transition:  border-bottom 100ms ease-in-out;
-	transition:  border-bottom 100ms ease-in-out;
+	padding-bottom: 1px;
+	-webkit-transition: color 100ms, border-bottom 100ms;
+	-moz-transition:  color 100ms, border-bottom 100ms;
+	-ms-transition:  color 100ms, border-bottom 100ms;
+	-o-transition:  color 100ms, border-bottom 100ms;
+	transition:  color 100ms, border-bottom 100ms;
 }
 
 a:hover {
-	border-bottom: 1px solid #FFF;
+	color: #000;
+	padding-bottom: 2px;
+	border-bottom: 1px solid #000;
 }
-
