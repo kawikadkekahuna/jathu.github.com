@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Password</title>
+	<link rel="shortcut icon" href="http://jathu.me/src/imgs/fav.png" />
+	<style type="text/css">
+		body {
+			background: #000;
+			font-family: "Courier", sans-serif;
+			margin: 0;
+			padding: 20px;
+		}
+
+		#count {
+			position: fixed;
+			left: 10px;
+			top: 10px;
+			width: calc(100% - 20px);
+			-webkit-user-select: none;      
+			-moz-user-select: none;
+			-ms-user-select: none;
+
+			text-align: right;
+			font-size: 10px;
+			color: #555;
+		}
+
+		#container {
+			width: 100%;
+			height: auto;
+			position: absolute;
+			top: 45%;
+			left: 0px;
+		}
+
+		h1#pass {
+			margin: 0px;
+			padding: 0px;
+			font-weight: 100;
+			letter-spacing: 1px;
+			font-size: 13px;
+			color: #FFF;
+		}
+	</style>
+</head>
+<body>
+	<div id="count">0</div>
+
+	<div id="container">
+		<center><h1 id="pass"></h1></center>
+	</div>
+
+	<script>
+		// ASCII range 33(!) to 126(~)
+		var MIN = 33, MAX = 126, LEN = 32, COUNT = 0, INTER = null;
+		var divPASS = document.getElementById('pass'), divCOUNT = document.getElementById('count');
+
+		function gen() {
+			var len = LEN, num, str = "";
+			while(len--) str += String.fromCharCode(((Math.random() * (MAX - MIN + 1)) | 0) + MIN);
+			divPASS.innerHTML = str;
+			divCOUNT.innerHTML = ++COUNT;
+		}
+
+		window.onload = function() {
+			if(window.location.hash.length == 0) {
+				window.location.href = "#"+LEN;
+			} else {
+				LEN = parseInt(window.location.hash.replace(/\D/g,"") || LEN);
+			}
+			gen();
+		};
+
+		document.onmousedown = function() {
+			clearInterval(INTER);
+			INTER = setInterval(gen, 1);
+		};
+
+		document.onmouseup = function() {
+			clearInterval(INTER);
+		}
+	</script>
+</body>
+</html>
