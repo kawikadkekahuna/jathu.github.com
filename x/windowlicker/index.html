@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>windowlicker</title>
+	<link rel="shortcut icon" href="http://jathu.me/src/imgs/fav.png" />
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+	<div id="main">
+		<div id="main-sub"><center>
+			<div id="main-icon"></div>
+			<h1>windowlicker</h1>
+			<p>unsplash wallpapers for os x</p>
+			<a href="http://jathu.me/f/windowlicker.zip">Download Beta</a>
+			<a href="https://github.com/jathu/windowlicker" target="_blank">GitHub</a>
+		</center></div>
+	</div>
+
+	<center><div id="screenshot" class="container">
+		<div id="screenshot-mac"></div>
+		<div id="screenshot-refresh"></div>
+		<div id="screenshot-helper">click the spinner on the bottom left.</div>
+	</div></center>
+
+	<center><div id="info" class="container">
+			<div id="" class="info-box">
+				<img src="imgs/info-1.png" />
+				<p>double click to change image.</p>
+			</div>
+			<div id="" class="info-divider"></div>
+			<div id="" class="info-box">
+				<img src="imgs/info-2.png" />
+				<p>command + click to go back.</p>
+			</div>
+			<div id="" class="info-divider"></div>
+			<div id="" class="info-box">
+				<img src="imgs/info-3.png" />
+				<p>keep images you like.</p>
+			</div>
+	</div></center>
+
+<script type="text/javascript">
+	window.onload = function() {
+		var IMAGES = [],
+		current = 0,
+		screenshot = document.getElementById('screenshot'), 
+		refresh = document.getElementById('screenshot-refresh');
+
+		for(var i = 1; i <= 9; i++) {
+			var img = new Image();
+			img.src = "imgs/"+i+".jpg";
+			IMAGES.push(img);
+		}
+
+		refresh.addEventListener('click', function() {
+			refresh.className = "rotate";
+			setTimeout(function() {
+				screenshot.style.backgroundImage = "url('"+IMAGES[current].src+"')";
+				current = (current < 7) ? current+1:0;
+				refresh.className = "";
+			}, 750);
+		}, false);
+	}
+</script>
+</body>
+</html>
