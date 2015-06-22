@@ -2,44 +2,44 @@ body {
 	background-color: #FFF;
 	margin: 0;
 	padding: 0;
-	font-family: 'Helvetica', sans-serif;
+	font-family: 'Old Standard TT', serif;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-khtml-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-	overflow: hidden;
-}
-
-#container {
-	width: 90%;
-	max-width: 550px;
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	overflow: hidden;
-
-	color: #999;
-	font-size: 14px;
-	line-height: 25px;
-	letter-spacing: 1px;
 }
 
 a {
-	color: #111;
-	border-bottom: 1px solid #CCC;
 	text-decoration: none;
+	color: #123f4c;
 	padding-bottom: 1px;
-	-webkit-transition: color 100ms, border-bottom 100ms;
-	-moz-transition:  color 100ms, border-bottom 100ms;
-	-ms-transition:  color 100ms, border-bottom 100ms;
-	-o-transition:  color 100ms, border-bottom 100ms;
-	transition:  color 100ms, border-bottom 100ms;
+	border-bottom: 1px solid rgba(129, 145, 153, 0.4);
+
+	-webkit-transition: border-bottom 100ms, padding-bottom 100ms;
+	-moz-transition:  border-bottom 100ms, padding-bottom 100ms;
+	-ms-transition:  border-bottom 100ms, padding-bottom 100ms;
+	-o-transition:  border-bottom 100ms, padding-bottom 100ms;
+	transition:  border-bottom 100ms, padding-bottom 100ms;
 }
 
 a:hover {
-	color: #000;
+	border-bottom: 1px solid #123f4c;	
 	padding-bottom: 2px;
-	border-bottom: 1px solid #000;
+}
+
+#container {
+	color: #123f4c;
+	text-shadow: 0px 2px 4px rgba(0,0,0,0.05);
+
+	position: absolute;
+	left: 50%;
+	top: 25%;
+	width: 300px;
+	margin-left: -150px;
+
+	font-size: 14px;
+	line-height: 22px;
+	font-weight: 400;
 }
